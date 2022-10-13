@@ -10,7 +10,10 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var moonImage: UIImageView!
     @IBOutlet weak var labelOutlet: UILabel!
+    @IBOutlet weak var earthOne: UIImageView!
     
+    @IBOutlet weak var earthTwo: UIImageView!
+    @IBOutlet weak var house: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -22,6 +25,15 @@ class ViewController: UIViewController {
         labelOutlet.center = tappedLoc
     }
     
+    @IBAction func housePan(_ sender: UIPanGestureRecognizer) {
+        house.center = sender.location(in: view)
+    }
+    @IBAction func earthPanTwo(_ sender: UIPanGestureRecognizer) {
+        earthOne.center = sender.location(in: view)
+    }
+    @IBAction func earthPanOne(_ sender: UIPanGestureRecognizer) {
+        earthTwo.center = sender.location(in: view)
+    }
     @IBAction func moonPan(_ sender: UIPanGestureRecognizer) {
         moonImage.center = sender.location(in: view)
     }

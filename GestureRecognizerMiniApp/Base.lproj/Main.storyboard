@@ -23,8 +23,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="earth-top2" translatesAutoresizingMaskIntoConstraints="NO" id="iai-Rq-xdK">
+                                <rect key="frame" x="46" y="199" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="9xi-o9-gCv" appends="YES" id="jZd-Ny-agz"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="earth-top" translatesAutoresizingMaskIntoConstraints="NO" id="ksp-w2-pAh">
+                                <rect key="frame" x="46" y="410" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="wpi-kH-lJG" appends="YES" id="rfK-x9-fnM"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="house" translatesAutoresizingMaskIntoConstraints="NO" id="ouh-QU-je1">
+                                <rect key="frame" x="75" y="623" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4qh-Hi-d29" appends="YES" id="ytC-0M-ssi"/>
+                                </connections>
+                            </imageView>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="moon" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vbL-4D-yoN">
-                                <rect key="frame" x="190" y="251" width="125" height="115"/>
+                                <rect key="frame" x="249" y="285.66666666666663" width="125" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -40,19 +64,37 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="labelOutlet" destination="HJK-I5-20d" id="SXT-2C-i5j"/>
+                        <outlet property="earthOne" destination="ksp-w2-pAh" id="oSD-15-PUD"/>
+                        <outlet property="earthTwo" destination="iai-Rq-xdK" id="jbf-kp-gLr"/>
+                        <outlet property="house" destination="ouh-QU-je1" id="5XW-ta-thP"/>
+                        <outlet property="labelOutlet" destination="HJK-I5-20d" id="WFk-Ky-EFU"/>
                         <outlet property="moonImage" destination="vbL-4D-yoN" id="aZI-NE-czU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="qpg-AB-xI0">
                     <connections>
-                        <action selector="tapScreenAction:" destination="BYZ-38-t0r" id="U1m-dP-XWn"/>
+                        <action selector="tapScreenAction:" destination="BYZ-38-t0r" id="nqL-ze-2hC"/>
                     </connections>
                 </tapGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="LxX-HJ-BX2">
                     <connections>
-                        <action selector="moonPan:" destination="BYZ-38-t0r" id="cSm-hH-LuO"/>
+                        <action selector="moonPan:" destination="BYZ-38-t0r" id="CB0-65-Gte"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="9xi-o9-gCv">
+                    <connections>
+                        <action selector="earthPanOne:" destination="BYZ-38-t0r" id="gWf-Kc-cB2"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="wpi-kH-lJG">
+                    <connections>
+                        <action selector="earthPanTwo:" destination="BYZ-38-t0r" id="9T5-b8-t4P"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="4qh-Hi-d29">
+                    <connections>
+                        <action selector="housePan:" destination="BYZ-38-t0r" id="zsy-tk-6fA"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
@@ -60,6 +102,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="earth-top" width="323" height="156"/>
+        <image name="earth-top2" width="363" height="139"/>
+        <image name="house" width="1176" height="1153"/>
         <image name="moon" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
